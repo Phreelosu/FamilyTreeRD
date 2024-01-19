@@ -1,0 +1,47 @@
+<div class="container">
+
+    <form [formGroup]="familyMemberForm" (ngSubmit)="onSubmit()" class="container mt-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Válasszon családtagot</label>
+        <select class="form-select" id="name" formControlName="name" (change)="onNameSelected($event)">
+          <option *ngFor="let member of familyMembers" [value]="member.name">{{ member.name }}</option>
+        </select>
+      </div>
+
+      <input type="hidden" formControlName="id">
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Születési dátum</label>
+        <input type="date" class="form-control" id="date" formControlName="date">
+      </div>
+  
+      <div class="mb-3">
+        <label for="address" class="form-label">Cím</label>
+        <input type="text" class="form-control" id="address" formControlName="address">
+      </div>
+  
+      <div class="mb-3">
+        <label for="mothers_name" class="form-label">Anyja neve</label>
+        <input type="text" class="form-control" id="mothers_name" formControlName="mothers_name">
+      </div>
+  
+      <div class="mb-3">
+        <label for="fathers_name" class="form-label">Apja neve</label>
+        <input type="text" class="form-control" id="fathers_name" formControlName="fathers_name">
+      </div>
+  
+      <div class="mb-3">
+        <label for="possible_death_time" class="form-label">Lehetséges elhalálozás ideje</label>
+        <input type="text" class="form-control" id="possible_death_time" formControlName="possible_death_time">
+      </div>
+  
+      <div class="mb-3">
+        <label for="possible_death_location" class="form-label">Lehetséges elhalálozás helye</label>
+        <input type="text" class="form-control" id="possible_death_location" formControlName="possible_death_location">
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Változtatások mentése</button>
+    </form>
+  
+  </div>
+  
